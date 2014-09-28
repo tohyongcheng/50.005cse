@@ -1,0 +1,32 @@
+Create	a	message	digest
+------------------------
+MD5(msg_hash.txt)= fafb00f5732ab283681e124bf8747ed1
+SHA1(msg_hash.txt)= 0f7b9c1779a56cde0deec591da114e59a68db301
+SHA256(msg_hash.txt)= 6f3438001129a90c5b1637928bf38bf26e39e57c6e9511005682048bedbef906
+
+Question 1:
+Size of the digits: 
+MD5: 32 hexadecimal digits
+SHA1: 40 hexadecimal digits
+SHA256: 64 hexadecimal digits
+
+
+Question 2:
+No
+
+Question 3:
+Yes
+
+Question 4:
+It takes longer to hash.
+
+Guarantee of message integrity
+------------------------------
+
+Question 1:
+No, she should not. This is because the message can be modified by someone else, and a new hash can be generated for that message.
+
+Question 2:
+She should use her private key to encrypt the message digest before sending it.
+
+Question 3:

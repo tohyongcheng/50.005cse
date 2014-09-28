@@ -1,0 +1,28 @@
+/* Programming Assignment 1
+* Author: Toh Yong Cheng
+* ID: 1000039
+* Date: 01/03/2014 */
+
+PURPOSE
+The purpose of the program is to execute a graph of user programs in parallel from a text file. The program forks child processes that run programs specified in the text file. It considers both control dependence (a program cannot start until its predecessors are finished) and data dependence (a program requires input from its predecessors before it can execute).
+
+
+DESCRIPTION
+The graph of user programs are first read in from the a text file that is inputted as an argument when running the command. Some programs are dependent on others to finish running before they can run themselves. This program checks to see whether any process is ready to run by checking if its parents have finished running. If it is ready, the program will fork a new child process to execute the process, leaving the main process to check other nodes to see if they are ready to execute. It handles multiple root nodes which can be executed simultaneously, and nodes that are ready are also executed in parallel.
+
+Each line in the text file to be read is to be in following format:
+[program name with arguments]:[list of children id]:[input file]:[output file]
+
+
+HOW TO COMPILE
+To compile the program, run the following commands in the terminal command:
+	$ g++ processmgt.c
+
+To run the program, 
+	$ ./a.out [filename]
+	( e.g. $ ./a.out testproc.txt )
+
+
+
+
+

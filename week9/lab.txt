@@ -1,0 +1,297 @@
+Question 1
+-------------------------------------------------------------------------------------
+--- www.csail.mit.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 244.120/276.894/346.080/30.394 ms
+
+
+--- www.w3.berkeley.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 182.687/193.256/206.693/7.565 ms
+
+
+--- rp0.ucc.usyd.edu.au ping statistics ---
+10 packets transmitted, 0 packets received, 100.0% packet loss
+
+
+--- www.kyoto-u.ac.jp ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 86.430/87.990/96.102/2.796 ms
+
+
+Question 2
+-------------------------------------------------------------------------------------
+The transmission delays increase the higher the physical distance between us and the servers we are trying to ping to. The propagation delays increase also due to the increased number of routers that we pass the packet through.
+
+
+Question 3
+-------------------------------------------------------------------------------------
+
+PING www.csail.mit.edu (128.30.2.155): 56 data bytes
+--- www.csail.mit.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 244.120/276.894/346.080/30.394 ms
+
+PING www.csail.mit.edu (128.30.2.155): 512 data bytes
+--- www.csail.mit.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 248.816/318.933/369.251/41.417 ms
+
+PING www.csail.mit.edu (128.30.2.155): 1024 data bytes
+--- www.csail.mit.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 254.930/305.898/364.783/36.234 ms
+
+
+
+PING www.w3.berkeley.edu (169.229.216.200): 56 data bytes
+--- www.w3.berkeley.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 182.687/193.256/206.693/7.565 ms
+
+PING www.w3.berkeley.edu (169.229.216.200): 512 data bytes
+--- www.w3.berkeley.edu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 179.915/193.267/219.779/11.704 ms
+
+PING www.w3.berkeley.edu (169.229.216.200): 1024 data bytes
+--- www.w3.berkeley.edu ping statistics ---
+10 packets transmitted, 9 packets received, 10.0% packet loss
+round-trip min/avg/max/stddev = 189.597/206.251/277.916/25.796 ms
+
+
+
+
+PING rp0.ucc.usyd.edu.au (129.78.5.11): 56 data bytes
+--- rp0.ucc.usyd.edu.au ping statistics ---
+10 packets transmitted, 0 packets received, 100.0% packet loss
+
+
+PING rp0.ucc.usyd.edu.au (129.78.5.11): 512 data bytes
+--- rp0.ucc.usyd.edu.au ping statistics ---
+10 packets transmitted, 0 packets received, 100.0% packet loss
+
+PING rp0.ucc.usyd.edu.au (129.78.5.11): 1024 data bytes
+--- rp0.ucc.usyd.edu.au ping statistics ---
+10 packets transmitted, 0 packets received, 100.0% packet loss
+
+
+
+
+PING www.kyoto-u.ac.jp (133.3.251.95): 56 data bytes
+--- www.kyoto-u.ac.jp ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 86.430/87.990/96.102/2.796 ms
+
+PING www.kyoto-u.ac.jp (133.3.251.95): 512 data bytes
+--- www.kyoto-u.ac.jp ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 85.694/89.395/93.223/1.972 ms
+
+PING www.kyoto-u.ac.jp (133.3.251.95): 1024 data bytes
+--- www.kyoto-u.ac.jp ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 86.292/88.740/91.860/1.505 ms
+
+
+The minimum round trips across the 4 hosts are not any different from one another. 
+
+These minimum round trips can be higher when using 56, 512 and 1024 byte packets because
+transmission delay increases when the length of the packet becomes bigger. 
+
+
+
+Question 4. 
+-------------------------------------------------------------------------------------
+
+PING ccms.wits.ac.za (146.141.9.215): 56 data bytes
+--- ccms.wits.ac.za ping statistics ---
+100 packets transmitted, 0 packets received, 100.0% packet loss
+
+PING lb1.www.ms.akadns.net (65.55.57.27): 56 data bytes
+--- lb1.www.ms.akadns.net ping statistics ---
+100 packets transmitted, 0 packets received, 100.0% packet loss
+
+There is 0% of successful response from the 2 hosts.
+
+Question 5.
+-------------------------------------------------------------------------------------
+This program attempts to trace the route an IP packet would follow to some internet host by launching UDP probe packets with a small ttl (time to live) then listening for an ICMP "time exceeded" reply from a gateway.  We start our probes with a ttl of one and increase by one until we get an ICMP "port unreachable" or hit a max.
+
+
+
+Question 6.
+-------------------------------------------------------------------------------------
+Executing exec(traceroute -m 30 -q 3 202.94.70.51)
+traceroute to 202.94.70.51 (202.94.70.51), 30 hops max, 40 byte packets
+ 1  134.79.197.131 (134.79.197.131)  0.571 ms  0.467 ms  0.549 ms
+ 2  rtr-core2-p2p-serv01-02.slac.stanford.edu (134.79.254.61)  0.407 ms  0.359 ms  0.398 ms
+ 3  rtr-border2-p2p-core1.slac.stanford.edu (134.79.252.141)  0.480 ms  0.415 ms  0.399 ms
+ 4  slac-mr2-p2p-rtr-border2.slac.stanford.edu (192.68.191.249)  0.289 ms  0.317 ms  0.257 ms
+ 5  * * *
+ 6  paixpart3-ip-a-sunncr5.es.net (134.55.218.133)  1.470 ms  1.392 ms  1.530 ms
+ 7  g5-0-0.plapx-dr1.ix.singtel.com (198.32.176.50)  1.646 ms  1.584 ms  1.525 ms
+ 8  203.208.172.237 (203.208.172.237)  1.608 ms 203.208.172.245 (203.208.172.245)  3.044 ms 203.208.173.137 (203.208.173.137)  1.516 ms
+ 9  203.208.171.106 (203.208.171.106)  1.693 ms ge-4-0-0-0.plapx-cr3.ix.singtel.com (203.208.183.174)  1.710 ms so-3-3-3-0.sngtp-ar6.ix.singtel.com (203.208.173.105)  222.854 ms
+10  so-3-3-3-0.sngtp-ar6.ix.singtel.com (203.208.173.105)  176.043 ms 203.208.152.218 (203.208.152.218)  264.862 ms 203.208.153.161 (203.208.153.161)  177.431 ms
+11  203.208.191.102 (203.208.191.102)  179.713 ms 203.208.182.101 (203.208.182.101)  168.329 ms 203.208.191.102 (203.208.191.102)  173.795 ms
+12  GE-5-1.kovan.singnet.com.sg (165.21.12.50)  173.935 ms  168.282 ms 203.208.166.58 (203.208.166.58)  188.884 ms
+13  203.208.191.102 (203.208.191.102)  166.969 ms 165.21.255.38 (165.21.255.38)  178.784 ms 203.208.191.102 (203.208.191.102)  185.567 ms
+14  GE-5-1.kovan.singnet.com.sg (165.21.12.50)  168.957 ms  174.316 ms  180.341 ms
+15  58.185.241.166 (58.185.241.166)  180.745 ms 165.21.255.38 (165.21.255.38)  177.131 ms  168.960 ms
+16  202.94.70.51 (202.94.70.51)  180.741 ms  173.627 ms  186.818 ms
+17  103.24.77.1 (103.24.77.1)  170.575 ms 58.185.241.166 (58.185.241.166)  169.464 ms 103.24.77.1 (103.24.77.1)  178.552 ms
+18  202.94.70.51 (202.94.70.51)  170.696 ms 69.210-193-8.qala.com.sg (210.193.8.69)  190.757 ms 202.94.70.51 (202.94.70.51)  171.878 ms
+19  * 103.24.77.1 (103.24.77.1)  180.862 ms 141.203-211-158.unknown.qala.com.sg (203.211.158.141)  180.792 ms
+20  213.203-211-158.unknown.qala.com.sg (203.211.158.213)  176.501 ms  185.765 ms  182.443 ms
+21  203.208.175.153 (203.208.175.153)  376.630 ms 141.203-211-158.unknown.qala.com.sg (203.211.158.141)  183.571 ms  198.656 ms
+22  213.203-211-158.unknown.qala.com.sg (203.211.158.213)  175.934 ms POS5-0-0.sngbt-ar2.ix.singtel.com (203.208.172.138)  218.504 ms 213.203-211-158.unknown.qala.com.sg (203.211.158.213)  183.865 ms
+23  ge-2-0-0-0.sngtp-dr2.ix.singtel.com (203.208.149.190)  210.054 ms  213.434 ms 203.208.152.49 (203.208.152.49)  224.350 ms
+24  POS5-0-0.sngbt-ar2.ix.singtel.com (203.208.172.138)  214.442 ms 203.208.174.182 (203.208.174.182)  185.668 ms 203.208.191.102 (203.208.191.102)  187.520 ms
+25  ge-1-1-0-0.sngtp-dr2.ix.singtel.com (203.208.183.209)  230.359 ms ge-2-0-0-0.sngtp-dr2.ix.singtel.com (203.208.149.190)  206.951 ms GE-5-1.kovan.singnet.com.sg (165.21.12.50)  188.250 ms
+26  165.21.255.38 (165.21.255.38)  185.056 ms 203.208.174.182 (203.208.174.182)  173.730 ms 165.21.255.38 (165.21.255.38)  185.375 ms
+27  GE-5-1.kovan.singnet.com.sg (165.21.12.50)  219.987 ms 58.185.241.166 (58.185.241.166)  180.242 ms GE-5-1.kovan.singnet.com.sg (165.21.12.50)  177.197 ms
+28  165.21.255.38 (165.21.255.38)  185.954 ms 58.185.241.166 (58.185.241.166)  196.713 ms  207.833 ms
+29  58.185.241.166 (58.185.241.166)  173.569 ms 202.94.70.51 (202.94.70.51)  180.292 ms  200.931 ms
+30  103.24.77.1 (103.24.77.1)  203.276 ms  192.756 ms  201.845 ms
+traceroute -m 30 -q 3 202.94.70.51 took 33secs. Total time=33secs.
+
+
+
+
+
+traceroute to 134.79.197.131 (134.79.197.131), 64 hops max, 52 byte packets
+ 1  192.168.80.1 (192.168.80.1)  1.343 ms  1.230 ms  1.578 ms
+ 2  192.168.22.242 (192.168.22.242)  1.306 ms  1.274 ms  1.278 ms
+ 3  192.168.22.28 (192.168.22.28)  1.659 ms  3.968 ms  4.149 ms
+ 4  103.24.77.1 (103.24.77.1)  4.558 ms  4.619 ms  4.431 ms
+ 5  69.210-193-8.qala.com.sg (210.193.8.69)  4.790 ms  5.522 ms  6.196 ms
+ 6  137.203-211-158.unknown.qala.com.sg (203.211.158.137)  6.066 ms  5.857 ms  4.230 ms
+ 7  213.203-211-158.unknown.qala.com.sg (203.211.158.213)  11.115 ms  8.961 ms  14.770 ms
+ 8  203.208.175.153 (203.208.175.153)  196.415 ms  190.621 ms  195.565 ms
+ 9  ge-1-0-0-0.sngtp-dr1.ix.singtel.com (203.208.173.133)  47.839 ms  37.527 ms  44.820 ms
+10  ge-2-0-0-0.nycec-cr1.ix.singtel.com (203.208.151.217)  38.890 ms
+    ge-4-0-6-0.sngc3-cr2.ix.singtel.com (203.208.182.153)  60.178 ms
+    ge-2-0-0-0.nycec-cr1.ix.singtel.com (203.208.151.217)  152.182 ms
+11  ge-4-0-4-0.sngc3-cr1.ix.singtel.com (203.208.182.86)  296.543 ms
+    203.208.171.186 (203.208.171.186)  180.683 ms
+    ge-4-0-4-0.sngc3-cr1.ix.singtel.com (203.208.182.86)  205.329 ms
+12  203.208.172.234 (203.208.172.234)  208.815 ms
+    203.208.172.242 (203.208.172.242)  237.726 ms
+    203.208.173.142 (203.208.173.142)  197.801 ms
+13  paix-pa.es.net (198.32.176.145)  186.379 ms  197.040 ms  199.628 ms
+14  * * *
+15  * slacmr2-ip-a-sunncr5.es.net (134.55.36.22)  293.891 ms  212.243 ms
+16  rtr-border1-p2p-slac-mr2.slac.stanford.edu (192.68.191.246)  201.227 ms  301.808 ms  192.128 ms
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+31  * * *
+32  * * *
+33  * * *
+34  * * *
+35  * * *
+36  * * *
+37  * * *
+38  * * *
+39  * * *
+40  * * *
+41  * * *
+42  * * *
+43  * * *
+44  * * *
+45  * * *
+46  * * *
+47  * * *
+48  * * *
+49  * * *
+50  * * *
+51  * * *
+52  * * *
+53  * * *
+54  * * *
+55  * * *
+56  * * *
+57  * * *
+58  * * *
+59  * * *
+60  * * *
+61  * * *
+62  * * *
+63  * * *
+64  * * *
+
+Question 7
+-------------------------------------------------------------------------------------
+For the direction from our own local machine to Stanford SLAC's server, there is a long list of "* * *" entries after the 16th entry. 
+
+There are similar routers that are used for both directions, but not all of them. Asymmetric routing occurs
+because TCP connections flow through different routes to different directions. TCP connections does not care which route a certain IP packet takes as long as it reaches its destination in a reasonable time. 
+
+
+
+
+
+Question 8
+-------------------------------------------------------------------------------------
+traceroute to 18.31.0.200 (18.31.0.200), 64 hops max, 52 byte packets
+ 1  192.168.80.1 (192.168.80.1)  1.856 ms  1.608 ms  1.558 ms
+ 2  192.168.22.242 (192.168.22.242)  1.446 ms  1.317 ms  1.724 ms
+ 3  192.168.22.28 (192.168.22.28)  2.005 ms  6.996 ms  4.835 ms
+ 4  103.24.77.1 (103.24.77.1)  4.773 ms  5.066 ms  4.045 ms
+ 5  69.210-193-8.qala.com.sg (210.193.8.69)  10.822 ms  15.003 ms  6.401 ms
+ 6  137.203-211-158.unknown.qala.com.sg (203.211.158.137)  38.261 ms  7.455 ms  5.771 ms
+ 7  213.203-211-158.unknown.qala.com.sg (203.211.158.213)  5.212 ms  9.525 ms  8.027 ms
+ 8  te2-3.br02.sin02.pccwbtn.net (63.218.107.141)  7.004 ms  7.688 ms  5.716 ms
+ 9  te0-0-0-33.ccr21.sjc03.atlas.cogentco.com (154.54.11.161)  175.468 ms  180.331 ms  175.629 ms
+10  be2047.ccr22.sjc01.atlas.cogentco.com (154.54.5.113)  173.674 ms  174.305 ms  174.416 ms
+11  be2165.ccr22.sfo01.atlas.cogentco.com (154.54.28.65)  185.878 ms  187.387 ms *
+12  be2133.ccr22.mci01.atlas.cogentco.com (154.54.30.66)  330.602 ms
+    be2135.mpd22.mci01.atlas.cogentco.com (154.54.0.70)  223.007 ms *
+13  be2159.mpd22.ord01.atlas.cogentco.com (154.54.24.82)  323.565 ms
+    be2157.ccr22.ord01.atlas.cogentco.com (154.54.6.118)  305.115 ms
+    be2159.mpd22.ord01.atlas.cogentco.com (154.54.24.82)  236.527 ms
+14  be2138.ccr22.bos01.atlas.cogentco.com (154.54.43.202)  261.400 ms
+    be2140.ccr22.bos01.atlas.cogentco.com (154.54.43.186)  341.434 ms
+    be2138.ccr22.bos01.atlas.cogentco.com (154.54.43.202)  328.983 ms
+15  38.104.186.186 (38.104.186.186)  306.646 ms  324.274 ms  242.416 ms
+16  * * *
+17  backbone-rtr-1-dmz-rtr-1.mit.edu (18.192.1.2)  243.758 ms  244.963 ms  258.459 ms
+18  * * *
+19  mitnet.trantor.csail.mit.edu (18.4.7.65)  339.847 ms  304.476 ms  249.394 ms
+20  trantor.helicon.csail.mit.edu (128.30.0.246)  364.854 ms *  322.450 ms
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+31  * * *
+32  * * *
+33  * * *
+34  * * *
+35  * * *
+36  * * *
+37  * * *
+
+
+The output shows * * * after the 20th entry. This is because the routers that the packet is sent to is not configured to respond to Internet Control Message Protocol (ICMP) packets. 
+
+
+
+

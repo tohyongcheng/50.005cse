@@ -1,0 +1,5 @@
+date +%S:none:stdin:stdout
+date +%S:none:stdin:stdout
+date +%S:none:stdin:stdout
+date +%S:none:stdin:stdout
+date +%S:none:stdin:stdout

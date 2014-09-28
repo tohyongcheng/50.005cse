@@ -1,0 +1,99 @@
+/**
+Question 4
+Each process prints each of its statements consecutively in the right order. This is because lseek function
+moves the pointer to write to the end of the file. Placing lseek before each write function ensures that 
+the process writes the statements at the end of the file each time.
+
+e.g.
+i:0 process:45347parent:44660 child:45349
+i:1 process:45349parent:45347 child:45350
+i:2 process:45350parent:1 child:45351
+i:3 process:45351parent:1 child:45352
+i:4 process:45352parent:1 child:45353
+i:5 process:45353parent:1 child:45354
+i:6 process:45354parent:1 child:45355
+i:7 process:45355parent:1 child:45356
+i:8 process:45356parent:1 child:45357
+i:9 process:45357parent:1 child:45358
+i:10 process:45358parent:45357 child:0
+
+*/
+
+/**
+Question 4.1
+We only see the last process's statement being printed. Also, the contents of the statement is wrong, similar to question 3.
+This is because lseek has been rendered useless by the sleep function. After sleep(1) is run, each process writes to the same
+line as lseek returns the same original line.
+
+e.g
+i:10 process:4553pparent:45535 child:0
+35
+
+
+*/
+
+/**
+Question 5
+The statements are printed correctly in the right order sometimes. However, there is a mix of first statements and second 
+statements printed in the wrong order sometimes.
+
+When we add the sleep(1) function, we see the first statement of all processes printed first, before the second
+statement of all the processes are printed. 
+
+e.g.
+
+i:0 process:45566i:1 process:45567i:2 process:45568i:3 process:45569i:4 process:45570i:5 process:45571i:6 process:45572i:7 process:45573i:8 process:45574i:9 process:45575i:10 process:45576parent:44660 child:45567
+parent:1 child:45568
+parent:45567 child:45569
+parent:1 child:45570
+parent:45569 child:45571
+parent:45570 child:45572
+parent:45571 child:45573
+parent:45572 child:45574
+parent:1 child:45575
+parent:45575 child:0
+parent:1 child:45576
+
+*/
+
+
+/**
+Question 6
+The program behaves as expected and outputs the statements in the right order.
+
+e.g.
+i:0 process:45772 parent:44660 child:45773
+i:1 process:45773 parent:45772 child:45774
+i:2 process:45774 parent:45773 child:45775
+i:3 process:45775 parent:45774 child:45776
+i:4 process:45776 parent:1 child:45777
+i:5 process:45777 parent:1 child:45778
+i:6 process:45778 parent:1 child:45779
+i:7 process:45779 parent:45778 child:45780
+i:8 process:45780 parent:1 child:45781
+i:9 process:45781 parent:1 child:45782
+i:10 process:45782 parent:45781 child:0
+
+*/
+
+
+
+/**
+Question 7
+
+The program behaves well as expected. 
+
+e.g.
+i:0 process:42853 parent:41840 child:42854
+i:1 process:42854 parent:42853 child:42855
+i:3 process:42856 parent:42855 child:42857
+i:2 process:42855 parent:42854 child:42856
+i:4 process:42857 parent:42856 child:42858
+i:5 process:42858 parent:42857 child:42859
+i:7 process:42860 parent:42859 child:42861
+i:6 process:42859 parent:1 child:42860
+i:8 process:42861 parent:1 child:42862
+i:9 process:42862 parent:42861 child:42863
+i:10 process:42863 parent:42862 child:0
+
+*/

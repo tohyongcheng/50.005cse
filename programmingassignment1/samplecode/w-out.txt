@@ -1,0 +1,6 @@
+19:52  up 4 days, 23:29, 4 users, load averages: 1.73 1.82 1.90
+USER     TTY      FROM              LOGIN@  IDLE WHAT
+tohyongcheng console  -                Fri16   3days -
+tohyongcheng s000     -                Sat01   1day  /Users/tohyongcheng/.rvm/rubies/ruby-2.0.0-p247/bin/ruby bin/rails s
+tohyongcheng s001     -                19:51       - w
+tohyongcheng s002     -                Sat01      22 -bash

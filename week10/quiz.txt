@@ -1,0 +1,17 @@
+1) Yes it is possible. The RR that contains the hostname will be a MX RR.
+
+2) 1 if the HTTP connection is not persistent. N if the HTTP Connections are persistent (e.g. Websockets)
+
+3i) 12
+3ii) 4
+3iii) 7
+3iv) 3
+
+
+4) Don't know indirection... :/
+
+
+5) Alice.com can use man in the middle attacks via the DNS servers. By directing any data to route to bob.com, it will cause a high influx of data to bob.com that may cause them to unable to handle that many requests, resulting in their service going down. they They can spoof the IP address for added security. They should also use distributed computing to launch the attacks to increase the amount of data load in the attacks.
+
+
+6) The ouput of the traceroute messages will be a series of '* * *' messages by the time the packet is sent to Host B while the previous entries of the 3 routers will be shown as valid routes on the traceroute results. This is because the packets that are sent to the destination do not return back to the initial source for host B. The disabling of ICMP on Host B causes packets to drop and not be sent back to source, thus the output unable to register any successful routes to Host B.

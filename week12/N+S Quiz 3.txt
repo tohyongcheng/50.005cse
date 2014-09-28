@@ -1,0 +1,37 @@
+N+S Quiz 3
+
+
+1.
+For symmetric keys,
+No. of keys needed = (N-1) + (N-2) + ... (1) = (N)*(N-/2)
+
+
+For asymmetric keys,
+No. of keys needed = 2*N (including both public and private keys)
+
+
+2.
+False. Alice can falsify evidence by creating her own message and encrypting it with the same symmetric key she shares with Bob.
+
+
+3. 
+	a. Alice sends Bob the MAC and the value of the hashed MAC (MD5)
+	b. Bob uses the same H function on the MAC he receives
+	c. Bob then compares the value he receives and the hashed value he gets from the MAC he receives
+	d. If both are equal, the message's integrity is assured.
+
+
+4.
+  n = pq = 55
+  z = (p-1)(q-1)-1 = 39
+  z = 
+
+
+
+5.
+	a. No it is not possible. Alice requires a public key to at least identify her.
+	
+	b. Yes, it is possible. Alice encrypts the message with Bob's public key and send it to Bob. Bob can then decrypt it with his own private key. With this,
+	we will not know that Alice is the one who sends the message.
+
+

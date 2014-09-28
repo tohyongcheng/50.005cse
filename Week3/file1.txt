@@ -1,0 +1,8 @@
+a.out
+b.txt
+beep.c
+file1.txt
+forkopen.c
+io_demo.c
+my.dat
+openfork.c

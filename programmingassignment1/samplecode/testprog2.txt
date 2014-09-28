@@ -1,0 +1,10 @@
+echo im 0:3:stdin:echo-out.txt
+echo im 1:6:stdin:echo-out2.txt
+echo im 3 should be triple:4 5:stdin:echo-out3.txt
+cat:6:echo-out.txt:mid1.txt
+cat:7 8:echo-out3.txt:mid3.txt
+cat:9:echo-out3.txt:mid4.txt
+cat mid1.txt echo-out2.txt:9:stdin:mid2.txt
+cat:9:mid3.txt:mid5.txt
+cat:9:mid3.txt:mid6.txt
+cat mid2.txt mid5.txt mid6.txt mid4.txt:none:stdin:result.txt

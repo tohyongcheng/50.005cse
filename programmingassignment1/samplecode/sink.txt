@@ -1,0 +1,8 @@
+  PID TTY           TIME CMD
+31142 ttys000    0:00.36 -bash
+37480 ttys000    1:51.44 /Users/tohyongcheng/.rvm/rubies/ruby-2.0.0-p247/bin/ruby bin/rails s
+44660 ttys001    0:00.84 -bash
+48564 ttys001    0:00.01 ./a.out testprog3.txt
+48567 ttys001    0:00.00 sleep 1
+32122 ttys002    0:00.15 -bash
+46684 ttys003    0:00.42 -bash

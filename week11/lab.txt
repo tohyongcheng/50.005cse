@@ -1,0 +1,40 @@
+Question 1
+
+AA
+length: 8
+
+AAAA
+length: 8
+
+AAAAAA
+length: 8
+
+AAAAAAAA
+length: 16
+
+AAAAAAAAAA
+length: 16
+
+AAAAAAAAAAAA
+length: 16
+
+AAAAAAAAAAAAAA
+length: 16
+
+AAAAAAAAAAAAAAAA
+length: 24
+
+The block cipher is 8 bytes long, so it works on the code block by block.
+
+
+Question 2:
+It is not the same because it uses a random generator.
+
+Question 3:
+See PublicExample
+
+Question 4:
+Base64 encoding helps to make the keys look like a valid string (of hexadecimals).
+
+Question 5: 
+Lab9_Security

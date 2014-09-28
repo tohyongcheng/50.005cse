@@ -1,0 +1,7 @@
+date +%S:3:stdin:date-1.txt
+date +%S:3:stdin:date-2.txt
+ls -l:4 5:stdin:ls-out.txt
+cat date-1.txt date-2.txt:6:stdin:stdout
+wc -l:6:ls-out.txt:stdout
+wc -c:6:ls-out.txt:stdout
+echo Done:none:stdin:stdout

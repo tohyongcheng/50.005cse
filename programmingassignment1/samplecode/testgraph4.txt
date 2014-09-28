@@ -1,0 +1,4 @@
+date +%S:2:stdin:date-1.txt
+date +%S:2:stdin:date-2.txt
+cat date-1.txt date-2.txt:3:stdin:concat.txt
+cat:none:concat.txt:output.txt

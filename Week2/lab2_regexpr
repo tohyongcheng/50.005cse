@@ -1,0 +1,28 @@
+#!/bin/sh
+#first let's get the list of unique names in data.dat
+NAMES=`awk '{print $6}' data.dat | sort -u`
+
+echo "NAMES:"
+
+#Now loop through each user.
+for NAME in $NAMES
+do
+	#Get the number of lines that in each particular name 
+	NUM=`grep -c "$NAME$" data.dat`
+
+	echo " - $NAME: $NUM lines."
+done
+
+#Now get the list of unique year in data.dat
+YEARS=` awk '{print substr($1, 0, 2)}' data.dat | sort -u  `
+echo "YEARS:"
+
+for YEAR in $YEARS
+do
+	NO=`grep -c "^$YEAR" data.dat`
+	echo " - $YEAR: $NO lines."
+done
+#Now loop through each year.
+
+#Get the number of lines in each particular year
+

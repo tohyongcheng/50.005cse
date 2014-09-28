@@ -1,0 +1,19 @@
+total 168
+-rwxr-xr-x  1 tohyongcheng  staff  14616 Mar  3 17:56 a.out
+-rw-r--r--  1 tohyongcheng  staff      3 Mar  3 17:56 date-1.txt
+-rw-r--r--  1 tohyongcheng  staff      3 Mar  3 17:56 date-2.txt
+-rw-r--r--  1 tohyongcheng  staff      0 Mar  3 19:52 ls-out.txt
+-rw-r--r--  1 tohyongcheng  staff   9730 Mar  3 19:51 processmgt.c
+-rw-r--r--@ 1 tohyongcheng  staff   4086 Feb 19 19:51 processmgt.c~
+-rw-r--r--  1 tohyongcheng  staff      0 Mar  3 19:52 quota-out.txt
+-rw-r--r--  1 tohyongcheng  staff     76 Mar  3 16:42 result.txt
+-rw-r--r--  1 tohyongcheng  staff    327 Mar  3 16:41 sink.txt
+-rw-r--r--  1 tohyongcheng  staff    209 Mar  3 16:44 testgraph2.txt
+-rw-r--r--@ 1 tohyongcheng  staff    135 Mar  3 16:44 testgraph3.txt
+-rw-r--r--@ 1 tohyongcheng  staff    132 Mar  3 16:44 testgraph4.txt
+-rw-r--r--@ 1 tohyongcheng  staff    204 Mar  3 16:44 testgraph5.txt
+-rw-r--r--  1 tohyongcheng  staff    174 Feb 19 19:29 testproc.txt
+-rw-r--r--  1 tohyongcheng  staff    356 Feb 27 21:19 testprog2.txt
+-rw-r--r--  1 tohyongcheng  staff    168 Feb 27 21:07 testprog3.txt
+-rw-r--r--  1 tohyongcheng  staff    183 Feb 27 21:20 testprog4.txt
+-rw-r--r--  1 tohyongcheng  staff    468 Mar  3 16:45 w-out.txt
